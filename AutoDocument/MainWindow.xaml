@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:AutoDocument"
         xmlns:sys1="http://schemas.microsoft.com/netfx/2009/xaml/presentation"
         mc:Ignorable="d"
-        Title="MainWindow" Height="200" Width="400">
+        Title="自动文档" Height="200" Width="400">
     <StackPanel>
         <StackPanel.Resources>
             <sys1:Thickness x:Key="defaultMargin">5</sys1:Thickness>
