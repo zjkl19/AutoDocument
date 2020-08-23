@@ -13,7 +13,16 @@
             <sys1:Thickness x:Key="buttonMargin">5</sys1:Thickness>
         </StackPanel.Resources>
         <StackPanel Orientation="Horizontal" Margin="{StaticResource defaultMargin}">
+            <Label>每行姓名数量（例：4）</Label>
+            <TextBox  Width="100" Name="OneLineCounts"></TextBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="{StaticResource defaultMargin}">
+            <Label>姓名之间空格数量（例：15）</Label>
+            <TextBox  Width="100" Name="WhileSpaceCounts"></TextBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="{StaticResource defaultMargin}">
             <Button Click="AutoDocument_Click" Margin="{StaticResource buttonMargin}">生成文档</Button>
+            <Button Click="OpenDocument_Click" Margin="{StaticResource buttonMargin}">打开文档</Button>
         </StackPanel>
     </StackPanel>
 </Window>

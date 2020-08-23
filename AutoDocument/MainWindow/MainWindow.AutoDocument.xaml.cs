@@ -22,7 +22,7 @@ namespace AutoDocument
 
             var nameList = new List<string>();    //学生姓名列表
 
-            //1、从Excel中读取原始数据，并保存为List变量
+            //1、从Excel中逐行读取原始数据（读到空行为止），并保存为List变量
             if (!File.Exists(dataFile))
             {
                 Debug.Print("文件不存在");
@@ -52,7 +52,9 @@ namespace AutoDocument
             //2、List变量写入Word文档
             string templateFile = @"Templates\光荣榜模板.docx";
             string outputFile = @"DocumentOut\光荣榜.docx";
-            int oneLineCounts = 4;int whileSpaceCounts = 15;
+
+            //从UI中提取数据
+            int oneLineCounts = Convert.ToInt32(OneLineCounts.Text);int whileSpaceCounts = Convert.ToInt32(WhileSpaceCounts.Text);
 
             Document doc;
             doc = new Document(templateFile);
@@ -73,6 +75,19 @@ namespace AutoDocument
             doc.Save(outputFile, SaveFormat.Docx);
             MessageBox.Show("成功生成文档！");
 
+        }
+
+        private void OpenDocument_Click(object sender, RoutedEventArgs e)
+        {
+            string documentFile = @"DocumentOut\光荣榜.docx"; ;
+            if (File.Exists(documentFile))
+            {
+                Process.Start(documentFile);
+            }
+            else
+            {
+                MessageBox.Show($"请先生成报告。");
+            }
         }
     }
 }
